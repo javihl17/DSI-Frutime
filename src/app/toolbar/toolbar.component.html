@@ -1,0 +1,11 @@
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="this.router.navigate(['frutas']);">Frutas</button>
+    <button mat-menu-item (click)="this.router.navigate(['tiendas']);">Tiendas</button>
+    <button mat-menu-item (click)="this.router.navigate(['scanner']);">Scanner</button>
+</mat-menu>
+
+
+<mat-toolbar class="toolbar">
+    <button mat-icon-button [matMenuTriggerFor]="appMenu"> <mat-icon>reorder</mat-icon> </button>
+    <button (click)="this.router.navigate(['home']);" style="font-size:28px;">FruitMe</button>
+</mat-toolbar>

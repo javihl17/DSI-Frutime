@@ -1,0 +1,21 @@
+<app-toolbar></app-toolbar>
+
+<div class="filtro_container">
+    <br>
+    <p>Frutas</p>
+    <div>
+        <mat-form-field>
+            <mat-label>
+                Buscar frutas que empiecen por...
+            </mat-label>
+            <input [(ngModel)]="search_texto" type="text" matInput>
+            <mat-icon matSuffix>filter_list</mat-icon>
+        </mat-form-field>
+    </div>
+</div>
+
+<div class="frutas_grid">
+    <div class="img_container" *ngFor="let fruta of getFrutas()" (click)="goToFruta(fruta.id)">
+        <img src="{{fruta.imagen}}">
+    </div>
+</div>

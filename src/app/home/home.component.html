@@ -1,0 +1,44 @@
+<app-toolbar></app-toolbar>
+
+<div fxLayout="row" fxLayoutAlign="center">
+    <div fxFlex="90">
+        <div fxLayout="row" fxLayoutAlign="center">
+            <img src="./assets/logo.png" alt="Logo" class="main_logo">
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center">
+            <h2 class="titulo-ventana title_logo">FruitMe</h2>
+        </div>
+
+        <div class="for_movile">
+            <div fxLayout="row" fxLayoutAlign="center">
+                <button (click)="goToFrutas()" matTooltip="Click para ir a las frutas" class="iconbutton button_icon" color="primary">
+                    <img src="./assets/limon_icon.png" alt="limon_icon" class="image_logo">
+                </button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <button (click)="goToTiendas()" matTooltip="Click para ir a las tiendas" class="iconbutton button_icon" color="primary">
+                    <img src="./assets/cesta_icon.png" alt="limon_icon" class="image_logo">
+                </button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+                <button (click)="goToEscaner()" matTooltip="Click para ir al scanner" class="iconbutton button_icon" color="primary">
+                    <img src="./assets/camara_icon.png" alt="limon_icon" class="image_logo">
+                </button>
+            </div>
+        </div>
+        <div class="for_desktop">
+            <div fxLayout="row" fxLayoutAlign="center">
+                <button (click)="goToFrutas()" matTooltip="Click para ir a las frutas" class="iconbutton button_icon" color="primary">
+                    <img src="./assets/limon_icon.png" alt="limon_icon" class="image_logo">
+                </button>
+                <button (click)="goToTiendas()" matTooltip="Click para ir a las tiendas" class="iconbutton button_icon" color="primary">
+                    <img src="./assets/cesta_icon.png" alt="limon_icon" class="image_logo">
+                </button>
+                <button (click)="goToEscaner()" matTooltip="Click para ir al scanner" class="iconbutton button_icon" color="primary">
+                    <img src="./assets/camara_icon.png" alt="limon_icon" class="image_logo">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

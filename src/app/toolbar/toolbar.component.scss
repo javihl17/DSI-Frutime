@@ -1,0 +1,16 @@
+.toolbar {
+    background-color: var(--primary);
+}
+
+button {
+    font-family: "BalsamiqSans", "Helvetica Neue", sans-serif;
+    border: none;
+    background-color: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:active {
+    transition: all 0.3s;
+    background: var(--secondary);
+}

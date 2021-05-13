@@ -1,0 +1,104 @@
+<app-toolbar></app-toolbar>
+<p class="title" style="text-align: center;">{{tienda.nombre}}</p>
+<div class="grid">
+
+    <div class="tienda_img_container"><img src="{{tienda.imagen}}" alt="{{tienda.imagen}}"></div>
+    <div>
+        <p>
+            Direccion: {{tienda.direccion}}
+        </p>
+
+        <p>
+            Calidad:
+            <img *ngFor="let estrella of getRange(tienda.calidad)" src="./assets/filled_star.png" alt="Estrella" srcset="" class="star">
+            <img *ngFor="let estrella of getRange(5 - tienda.calidad)" src="./assets/star.png" alt="Estrella" srcset="" class="star">
+        </p>
+
+        <p>
+            Horario: {{tienda.horario}}
+        </p>
+    </div>
+    <div>
+        <p class="center_text">Frutas que vende:</p>
+    </div>
+    <div>
+        <div *ngFor="let id_fruta of tienda.frutas" (click)="goToFruta(id_fruta)" class="selectable">
+            <div class="grid_frutas">
+                <p>{{getFruta(id_fruta).nombre}}</p>
+                <div class="img_container_fruta">
+                    <img src="{{getFruta(id_fruta).imagen}}" alt="{{getFruta(id_fruta).imagen}}" class="img_fruta">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+<!--Inserte aqui lista de frutas disponibles-->
+<!-- <div class="div_container" fxLayout="row" fxLayoutAlign="center">
+
+    <div fxFlex=66 fxFlexFill fxLayout="column" fxLayoutAlign="center">
+
+        <p fxFlex fxFlexAlign="center" class="titulo-ventana">Tienda</p>
+
+        <div class="line"></div>
+
+        <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h3>Datos personales</h3>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field><input matInput type="text" placeholder="Nombre" [(ngModel)]="contacto.nombre" name="nombre" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Apellidos" [(ngModel)]="contacto.apellidos" name="apellidos" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Teléfono" [(ngModel)]="contacto.telefono" name="email" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Email" [(ngModel)]="contacto.email" name="telefono" disabled /></mat-form-field>
+                <mat-form-field>
+                    <mat-label>Tipo</mat-label>
+                    <mat-select [(ngModel)]="contacto.tipo" name="tipo" disabled>
+                        <mat-option *ngFor="let tipo of getTipos();let i=index" [value]="i">
+                            {{tipo}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div fxFlex>
+                    <mat-checkbox [(ngModel)]="contacto.habitual" name="habitual" disabled>Habitual</mat-checkbox>
+                </div>
+            </div>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h3>Otros datos</h3>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div fxLayout="column" fxLayoutAlign="center">
+                <mat-form-field><input matInput type="text" placeholder="Dirección" [(ngModel)]="contacto.direccion" name="direccion" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Empresa" [(ngModel)]="contacto.empresa" name="empresa" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Teléfono de empresa" [(ngModel)]="contacto.telefono_empresa" name="telefono_empresa" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Cargo" [(ngModel)]="contacto.cargo" name="cargo" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Cumpleaños" [(ngModel)]="contacto.cumpleanos" name="cumpleanos" disabled/></mat-form-field>
+                <mat-form-field><input matInput type="text" placeholder="Anotaciones" [(ngModel)]="contacto.anotaciones" name="anotaciones" disabled/></mat-form-field>
+            </div>
+        </mat-expansion-panel>
+
+
+
+
+        <div fxLayout="row" style="margin-top:50px;">
+            <div fxFlex fxLayoutAlign="center">
+                <button (click)="volver()" mat-flat-button color="primary">Volver</button>
+            </div>
+        </div>
+
+    </div>
+</div> -->

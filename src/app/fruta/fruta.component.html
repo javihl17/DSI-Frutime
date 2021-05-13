@@ -1,0 +1,37 @@
+<app-toolbar></app-toolbar>
+
+<p class="title" style="text-align: center;">{{fruta.nombre}}</p>
+<div class="grid">
+
+    <div class="fruta_img_container"><img src="{{fruta.imagen}}" alt="{{fruta.imagen}}"></div>
+    <div>
+        <p>
+            Procedencia: {{fruta.procedencia}}
+        </p>
+
+        <p>
+            Calidad:
+            <img *ngFor="let estrella of getRange(fruta.calidad)" src="./assets/filled_star.png" alt="Estrella" srcset="" class="star">
+            <img *ngFor="let estrella of getRange(5 - fruta.calidad)" src="./assets/star.png" alt="Estrella" srcset="" class="star">
+        </p>
+
+        <p>
+            Precio el kilo medio: {{fruta.precio}} €/kg
+        </p>
+        <p>
+            Tipo: {{fruta.tipo}}
+        </p>
+    </div>
+    <div>
+        <p class="center_text">Tiendas Cercanas:</p>
+    </div>
+    <div>
+        <div *ngFor="let id_fruta of fruta.tiendasCercanas" (click)="goToFruta(id_fruta)" class="selectable">
+            <div class="grid_frutas">
+                <p>{{getTienda(id_fruta).nombre}}</p>
+                <div class="img_container_fruta">
+                    <img src="{{getTienda(id_fruta).imagen}}" alt="{{getTienda(id_fruta).imagen}}" class="img_fruta">
+                </div>
+            </div>
+        </div>
+    </div>
